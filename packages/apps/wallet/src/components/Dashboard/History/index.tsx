@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Record from './Record'
-import { TransactionType, StatusType } from '../../../constants'
+import { TRANSACTION, TRANSACTION_STATUS } from '../../../constants'
 
 import * as styles from './styles'
 
@@ -19,7 +19,7 @@ const Balance:React.FunctionComponent<BalanceType> = ({
     return (
         <div className={styles.historyContainer}>
             I am history
-            <Record value={1.1} status={StatusType.Success} type={TransactionType.TopUp} sender="testsender" recipient='testrecipient' timestamp={Date.now()} />
+            <Record value={1.1} status={TRANSACTION_STATUS.SUCCESS} type={TRANSACTION.TOPUP} sender="testsender" recipient='testrecipient' timestamp={Date.now()} balance={20} />
         </div>
     )
 }

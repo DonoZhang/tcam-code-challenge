@@ -1,0 +1,5 @@
+export const UPDATE_STATUS = "UPDATE_STATUS"
+export const UPDATE_BALANCE = "UPDATE_BALANCE"
+export const UPDATE_HISTORY = "UPDATE_HISTORY"
+export const TOP_UP = "TOP_UP"
+export const PAY = "PAY"

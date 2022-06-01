@@ -2,34 +2,26 @@ import React from 'react'
 import Money from 'tcam-money'
 import { Time } from 'tcam-utils'
 
-import { TransactionType, StatusType } from '../../../constants'
-
 import * as styles from './styles'
 
-interface RecordType {
-    value: number
-    type: TransactionType
-    status: StatusType
-    sender: string
-    recipient: string
-    timestamp: number
-}
-
-const Record:React.FunctionComponent<RecordType> = ({
+const Record:React.FunctionComponent<IRecord> = ({
     value,
     type,
     status,
     sender,
     recipient,
-    timestamp
+    timestamp,
+    balance
 }) => {
     
     return (
         <div className={styles.record(status)} key={timestamp}>
             <span className='status'>{status}</span>
-            <span>From {sender} to {recipient}</span>
             <span>{type}</span>
             <Money value={value} symbol="$" abbreviation="A" />
+            <span>From {sender} to {recipient}</span>
+            <span>Left: </span>
+            <Money value={balance} symbol="$" abbreviation="A" />
             <span>{Time.formatTimeStamp(timestamp)}</span>
         </div>
     )

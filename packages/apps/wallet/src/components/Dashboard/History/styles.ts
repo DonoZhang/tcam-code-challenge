@@ -1,7 +1,7 @@
 import { css } from '@emotion/css'
 import { colors } from 'tcam-theme'
 
-import { StatusType } from '../../../constants'
+import { TRANSACTION_STATUS } from '../../../constants'
 
 export const historyContainer = css`
     border: 1px solid ${colors.secondary};
@@ -9,7 +9,7 @@ export const historyContainer = css`
 `
 
 export const record = (status: StatusType) => {
-    const failed = status === StatusType.Failure
+    const failed = status === TRANSACTION_STATUS.FAILURE
     const borderColor = failed ? colors.error : colors.info
     const statusColor = failed ? colors.error: colors.success
     
@@ -18,7 +18,7 @@ export const record = (status: StatusType) => {
         border-radius: 5px;
         padding: 2px;
         display: grid;
-        grid-template-columns: 70px auto 50px 60px auto;
+        grid-template-columns: 70px 50px 60px auto 30px 60px auto;
 
         & > * {
             display: flex;
