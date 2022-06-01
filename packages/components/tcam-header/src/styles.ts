@@ -1,5 +1,5 @@
 import { css } from '@emotion/css'
-import { breakpoints, colors } from 'tcam-theme'
+import { colors } from 'tcam-theme'
 
 export const header = css`
     width: 100%;

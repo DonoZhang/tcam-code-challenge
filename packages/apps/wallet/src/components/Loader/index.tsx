@@ -1,25 +1,20 @@
-import React from 'react';
-import TCAMLoader from 'tcam-loader'
-import { connect } from 'react-redux'
+import React from "react";
+import TCAMLoader from "tcam-loader";
+import { connect } from "react-redux";
 
-import { getLoading } from '../../store/selectors';
-import * as styles from './styles'
+import { getLoading } from "../../store/selectors";
+import * as styles from "./styles";
 
 interface LoaderType {
-    loading?: boolean
+  loading?: boolean;
 }
 
-const Loader:React.FunctionComponent<LoaderType> = ({
-    loading,
-}) => <TCAMLoader loading={loading} className={styles.loaderContainr} />
+const Loader: React.FunctionComponent<LoaderType> = ({ loading }) => (
+  <TCAMLoader loading={loading} className={styles.loaderContainr} />
+);
 
+const mapStateToProps = (state: IState) => ({
+  loading: getLoading(state),
+});
 
-const mapStateToProps = (state:IState) => ({
-    loading: getLoading(state)
-})
-
-
-export default connect (
-    mapStateToProps,
-    null,
-)(Loader)
+export default connect(mapStateToProps, null)(Loader);

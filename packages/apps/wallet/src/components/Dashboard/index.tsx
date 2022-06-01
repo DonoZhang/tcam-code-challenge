@@ -1,19 +1,19 @@
-import React from 'react'
+import React from "react";
 
-import Balance from './Balance'
-import Transaction from './Transaction'
-import History from './History'
-import Loader from '../Loader'
+import Balance from "./Balance";
+import Transaction from "./Transaction";
+import History from "./History";
+import Loader from "../Loader";
 
-import * as styles from './styles'
+import * as styles from "./styles";
 
-export default () => {
-    return (
-        <div className={styles.dashboardContainer}>
-            <Balance value={0} />
-            <Transaction />
-            <History />         
-            <Loader />
-        </div>
-    )
-}
+const Dashboard: React.FunctionComponent = () => (
+  <div className={styles.dashboardContainer}>
+    <Balance value={0} />
+    <Transaction />
+    <History />
+    <Loader />
+  </div>
+);
+
+export default Dashboard;

@@ -1,1 +1,1 @@
-export const formatTimeStamp = (timestamp:string) => new Date(timestamp).toLocaleString()
+export const formatTimeStamp = (timestamp:string):string => new Date(timestamp).toLocaleString()
