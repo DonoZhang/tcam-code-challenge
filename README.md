@@ -26,6 +26,15 @@ The "apps" folder contains different Applications. Each application represents a
 
 The "components" folder contains all reusable UI component assets that belong to TCAM. These components are designed to be used across different projects. Each component is an independent package which can be published to a private npm registry, for example, AWS code artifacts. In this example, I tested packages publishment in a local npm registry with [verdaccio](https://github.com/verdaccio/verdaccio).
 
+In this challenge, the following UI packages are published:
+- [tcam-button](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/components/tcam-button): a button component
+- [tcam-header](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/components/tcam-header): a header component
+- [tcam-input](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/components/tcam-input): a text/number input component
+- [tcam-loader](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/components/tcam-loader): a loading spinner
+- [tcam-money](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/components/tcam-money): a component to display formatted money value
+- [tcam-theme](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/components/tcam-theme): a library containing UI themes including colors and breakpoint values
+- [tcam-utils](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/components/tcam-utils): utility functions
+
 ## Dev setup
 
 1. install npm & node - https://nodejs.org/en/
