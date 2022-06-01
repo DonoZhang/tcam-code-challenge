@@ -23,7 +23,6 @@ declare global {
         type: TransactionType
         sender: string
         recipient: string
-        balance: number
     }
 
     interface IRecord {
@@ -40,6 +39,13 @@ declare global {
         type: string
         [key: string]: any
     }
+    
+    interface IState {
+        balance: number
+        history: IRecord[]
+        appStatus: AppStatusType
+    }
+  
 }
 
 export {}

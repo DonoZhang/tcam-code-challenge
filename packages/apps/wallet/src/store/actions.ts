@@ -1,4 +1,4 @@
-import { APPSTATUS,TRANSACTION_STATUS } from "../constants"
+import { APPSTATUS,TRANSACTION,TRANSACTION_STATUS } from "../constants"
 import * as actionTypes from "./actionTypes"
 
 export const updateAppStatus = (appStatus: AppStatusType) => ({
@@ -16,14 +16,16 @@ export const updateHistory = (record: IRecord) =>({
   record
 })
 
-export const TopUp = (payload: ITransactionRequest) => async (dispatch: Function) => {
+export const Transaction = (payload: ITransactionRequest) => async (dispatch: Function, getState: Function) => {
   dispatch(updateAppStatus(APPSTATUS.LOADING))
+  const balance = getState().balance
   try {
-    const data = await simulateRequest(payload)
+    const data = await simulateRequest(payload, balance)
     dispatch(updateAppStatus(APPSTATUS.LOADED))
     dispatch(updateBalance(data.balance))
     dispatch(updateHistory(data))
   } catch(error) {
+    console.log(error)
     dispatch(updateAppStatus(APPSTATUS.ERROR))
     const record = {
       value: payload.value,
@@ -32,7 +34,7 @@ export const TopUp = (payload: ITransactionRequest) => async (dispatch: Function
       sender: payload.sender,
       recipient: payload.recipient,
       timestamp: Date.now(),
-      balance: payload.balance,
+      balance,
     }
     dispatch(updateHistory(record))
   }
@@ -40,20 +42,21 @@ export const TopUp = (payload: ITransactionRequest) => async (dispatch: Function
 
 // API Mocking
 const sleep = (ms:number) => new Promise(resolve => setTimeout(resolve, ms))
-const simulateRequest = async (payload: ITransactionRequest) => {
+const simulateRequest = async (payload: ITransactionRequest, balance: number) => {
   await sleep(1000)
-  let balance = payload.balance
+  let newBalance = balance
   switch (payload.type) {
-    case TransactionType.Pay: {
-      if (payload.balance >= payload.value) {
-        balance -= payload.value
+    case TRANSACTION.PAY: {
+      if (balance >= payload.value) {
+        newBalance -= payload.value
         break
-      } else
+      } else {
         throw Error("Insufficient balance")
+      }
     }
-    case TransactionType.TopUp:
+    case TRANSACTION.TOPUP:
     default:
-      balance += payload.value
+      newBalance += payload.value
   }
 
   const response:IRecord = {
@@ -63,7 +66,7 @@ const simulateRequest = async (payload: ITransactionRequest) => {
     sender: payload.sender,
     recipient: payload.recipient,
     timestamp: Date.now(),
-    balance,
+    balance: newBalance,
   }
   return response
 }

@@ -1,12 +1,6 @@
 import * as actionTypes from "./actionTypes"
 import { APPSTATUS } from '../constants'
 
-interface IState {
-  balance: number
-  history: IRecord[]
-  appStatus: AppStatusType
-}
-
 const initialState: IState = {
   balance: 0,
   history: [],
