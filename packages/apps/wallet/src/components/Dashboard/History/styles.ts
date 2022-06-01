@@ -6,6 +6,9 @@ import { TRANSACTION_STATUS } from '../../../constants'
 export const historyContainer = css`
     border: 1px solid ${colors.secondary};
     padding: 5px;
+    min-height: 200px;
+    max-height: 380px;
+    overflow: auto;
 `
 
 export const record = (status: StatusType) => {

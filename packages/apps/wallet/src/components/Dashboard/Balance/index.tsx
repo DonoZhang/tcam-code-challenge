@@ -1,5 +1,6 @@
 import React from 'react'
 import Money from 'tcam-money'
+import { connect } from 'react-redux'
 
 import * as styles from './styles'
 
@@ -21,5 +22,12 @@ const Balance:React.FunctionComponent<BalanceType> = ({
     )
 }
 
-export default Balance
+const mapStateToProps = (state:IState) => ({
+    value: state.balance
+})
+
+export default connect(
+    mapStateToProps,
+    null
+)(Balance)
 // TODO: Connect to redux
