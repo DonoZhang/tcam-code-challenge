@@ -1,0 +1,8 @@
+{
+  "name": "tcam",
+  "packageManager": "yarn@3.2.1",
+  "private": true,
+  "workspaces": [
+    "packages/*/**"
+  ]
+}

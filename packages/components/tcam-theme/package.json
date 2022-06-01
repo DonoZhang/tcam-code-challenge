@@ -1,0 +1,30 @@
+{
+  "name": "tcam-theme",
+  "version": "1.0.1",
+  "description": "TCAM UI Themes",
+  "main": "dist/index.js",
+  "types": "src/index.d.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [
+    "theme",
+    "tcam"
+  ],
+  "author": "dapengzhang.jobapplication@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/plugin-transform-typescript": "^7.18.4",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
+    "babel-loader": "^8.2.5",
+    "typescript": "^4.7.2",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
+}
