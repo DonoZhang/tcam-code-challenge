@@ -26,7 +26,7 @@ The "apps" folder contains different Applications. Each application represents a
 
 The "components" folder contains all reusable UI component assets that belong to TCAM. These components are designed to be used across different projects. Each component is an independent package which can be published to a private npm registry, for example, AWS code artifacts. In this example, I tested packages publishment in a local npm registry with [verdaccio](https://github.com/verdaccio/verdaccio).
 
-In this challenge, the following UI packages are published:
+In this challenge, the following UI packages are created:
 - [tcam-button](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/components/tcam-button): a button component
 - [tcam-header](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/components/tcam-header): a header component
 - [tcam-input](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/components/tcam-input): a text/number input component
@@ -75,3 +75,4 @@ yarn workspace wallet start
 
 - add ESLint
 - create a template generator so you can run a command to create a new package
+- provision a private registry and publish the packages onto this registry
