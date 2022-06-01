@@ -10,7 +10,7 @@ interface BalanceType {
   symbol?: string;
 }
 
-const Balance: React.FunctionComponent<BalanceType> = ({
+export const Balance: React.FunctionComponent<BalanceType> = ({
   value,
   abbreviation = "A",
   symbol = "$",
