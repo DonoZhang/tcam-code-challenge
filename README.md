@@ -22,7 +22,9 @@ Folder structure:
 |-|-|...
 ```
 
-The "apps" folder contains different Applications. Each application represents a different project. In this example, it contains the "wallet" application.
+The "apps" folder contains different Applications. Each application represents a different project.
+In this challenge, the following app is created:
+- [wallet](https://github.com/DonoZhang/tcam-code-challenge/tree/main/packages/apps/wallet)
 
 The "components" folder contains all reusable UI component assets that belong to TCAM. These components are designed to be used across different projects. Each component is an independent package which can be published to a private npm registry, for example, AWS code artifacts. In this example, I tested packages publishment in a local npm registry with [verdaccio](https://github.com/verdaccio/verdaccio).
 
@@ -70,6 +72,8 @@ yarn workspace wallet add tcam-theme
 ```bash
 yarn workspace wallet start
 ```
+
+#### Note: if no private npm registry is setup, please build all the UI library that your app depends on before running this start command.
 
 # TODO
 
