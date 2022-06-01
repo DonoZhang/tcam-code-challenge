@@ -3,16 +3,15 @@ import TCAMLoader from 'tcam-loader'
 import { connect } from 'react-redux'
 
 import { getLoading } from '../../store/selectors';
+import * as styles from './styles'
 
 interface LoaderType {
     loading?: boolean
-    className?: string
 }
 
 const Loader:React.FunctionComponent<LoaderType> = ({
     loading,
-    className
-}) => <TCAMLoader loading={loading} className={className} />
+}) => <TCAMLoader loading={loading} className={styles.loaderContainr} />
 
 
 const mapStateToProps = (state:IState) => ({

@@ -5,4 +5,5 @@ export const dashboardContainer = css`
     background: ${colors.tertiary};
     border-radius: 5px;
     padding: 20px;
+    position: relative;
 `
