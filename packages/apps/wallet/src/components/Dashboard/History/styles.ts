@@ -1,5 +1,5 @@
 import { css } from '@emotion/css'
-import { colors } from 'tcam-theme'
+import { breakpoints, colors } from 'tcam-theme'
 
 import { TRANSACTION_STATUS } from '../../../constants'
 
@@ -18,7 +18,10 @@ export const record = (status: StatusType) => {
         border-radius: 5px;
         padding: 2px;
         display: grid;
-        grid-template-columns: 70px 50px 60px auto 30px 60px auto;
+        
+        @media (min-width: ${breakpoints.md}) {
+            grid-template-columns: 70px 110px auto 110px auto;
+        }
 
         & > * {
             display: flex;
@@ -32,3 +35,7 @@ export const record = (status: StatusType) => {
         }
     `
 }
+
+export const money = css`
+    padding-left: 10px;
+`

@@ -12,6 +12,7 @@ interface IAppStatus {
     LOADING: AppStatusType
     ERROR: AppStatusType
     LOADED: AppStatusType
+    PORTAL_OPEN: AppStatusType
 }
 
 export const TRANSACTION:ITransaction=  {
@@ -28,4 +29,5 @@ export const APPSTATUS:IAppStatus = {
     LOADING: "LOADING" as unknown as AppStatusType,
     ERROR: "ERROR" as unknown as AppStatusType,
     LOADED: "LOADED" as unknown as AppStatusType,
+    PORTAL_OPEN: "PORTAL_OPEN" as unknown as AppStatusType,
 }

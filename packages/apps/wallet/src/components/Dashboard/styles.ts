@@ -6,4 +6,5 @@ export const dashboardContainer = css`
     border-radius: 5px;
     padding: 20px;
     position: relative;
+    min-height: 500px;
 `

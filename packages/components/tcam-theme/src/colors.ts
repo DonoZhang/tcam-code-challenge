@@ -4,6 +4,7 @@ export interface ColorThemeType {
   tertiary: string
   textPrimary: string
   textSecondary: string
+  textTertiary: string
   error: string
   warning: string
   info: string
@@ -16,6 +17,7 @@ const color_theme: ColorThemeType = {
   tertiary: "#fff",
   textPrimary: "#FFFFFF",
   textSecondary: "#000000",
+  textTertiary: "#a9a9a9",
   error: "#FF0000",
   warning: "#EE4B2B",
   info: "#DBDFFD",

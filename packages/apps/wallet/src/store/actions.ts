@@ -16,7 +16,7 @@ export const updateHistory = (record: IRecord) =>({
   record
 })
 
-export const Transaction = (payload: ITransactionRequest) => async (dispatch: Function, getState: Function) => {
+export const transaction = (payload: ITransactionRequest) => async (dispatch: Function, getState: Function) => {
   dispatch(updateAppStatus(APPSTATUS.LOADING))
   const balance = getState().balance
   try {

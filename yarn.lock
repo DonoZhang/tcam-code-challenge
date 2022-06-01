@@ -11851,6 +11851,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"tcam-input@workspace:^, tcam-input@workspace:packages/components/tcam-input":
+  version: 0.0.0-use.local
+  resolution: "tcam-input@workspace:packages/components/tcam-input"
+  dependencies:
+    "@babel/core": ^7.18.2
+    "@babel/plugin-transform-typescript": ^7.18.4
+    "@babel/preset-env": ^7.18.2
+    "@babel/preset-react": ^7.17.12
+    "@babel/preset-typescript": ^7.17.12
+    "@emotion/babel-plugin": ^11.9.2
+    "@emotion/css": ^11.9.0
+    babel-loader: ^8.2.5
+    react: ^18.1.0
+    tcam-theme: "workspace:^"
+    typescript: ^4.7.2
+    webpack: ^5.72.1
+    webpack-cli: ^4.9.2
+  languageName: unknown
+  linkType: soft
+
 "tcam-loader@workspace:^, tcam-loader@workspace:packages/components/tcam-loader":
   version: 0.0.0-use.local
   resolution: "tcam-loader@workspace:packages/components/tcam-loader"
@@ -12452,6 +12472,7 @@ __metadata:
     redux-thunk: ^2.4.1
     tcam-button: "workspace:^"
     tcam-header: "workspace:^"
+    tcam-input: "workspace:^"
     tcam-loader: "workspace:^"
     tcam-money: "workspace:^"
     tcam-theme: "workspace:^"

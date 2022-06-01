@@ -14,7 +14,8 @@ declare global {
     enum AppStatusType {
         LOADING = APPSTATUS.LOADING,
         ERROR = APPSTATUS.ERROR,
-        LOADED = APPSTATUS.LOADED
+        LOADED = APPSTATUS.LOADED,
+        PORTAL_OPEN = APPSTATUS.PORTAL_OPEN
     }
 
     

@@ -17,11 +17,9 @@ const Record:React.FunctionComponent<IRecord> = ({
     return (
         <div className={styles.record(status)} key={timestamp}>
             <span className='status'>{status}</span>
-            <span>{type}</span>
-            <Money value={value} symbol="$" abbreviation="A" />
+            <span>{type}:<Money value={value} symbol="$" abbreviation="A"className={styles.money} /></span>
             <span>From {sender} to {recipient}</span>
-            <span>Left: </span>
-            <Money value={balance} symbol="$" abbreviation="A" />
+            <span>Left:<Money value={balance} symbol="$" abbreviation="A" className={styles.money} /></span>
             <span>{Time.formatTimeStamp(timestamp)}</span>
         </div>
     )

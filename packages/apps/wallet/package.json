@@ -19,6 +19,7 @@
     "redux-thunk": "^2.4.1",
     "tcam-button": "workspace:^",
     "tcam-header": "workspace:^",
+    "tcam-input": "workspace:^",
     "tcam-loader": "workspace:^",
     "tcam-money": "workspace:^",
     "tcam-utils": "workspace:^",
