@@ -4,7 +4,7 @@ import { APPSTATUS } from '../constants'
 const initialState: IState = {
   balance: 0,
   history: [],
-  appStatus: APPSTATUS.LOADING,
+  appStatus: APPSTATUS.LOADED,
 }
 
 const reducer = (
