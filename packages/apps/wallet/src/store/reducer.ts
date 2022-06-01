@@ -27,7 +27,7 @@ const reducer = (
       history.push(action.record)
       return {
         ...state,
-        history,
+        history: [...history], // Force react rerender
       }
     }
     default:

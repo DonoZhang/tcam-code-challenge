@@ -20,7 +20,7 @@ export const record = (status: StatusType) => {
         display: grid;
         
         @media (min-width: ${breakpoints.md}) {
-            grid-template-columns: 70px 110px auto 110px auto;
+            grid-template-columns: 100px 1fr 1fr;
         }
 
         & > * {
@@ -28,6 +28,7 @@ export const record = (status: StatusType) => {
             align-items: center;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 14px;
+
         }
 
         .status {

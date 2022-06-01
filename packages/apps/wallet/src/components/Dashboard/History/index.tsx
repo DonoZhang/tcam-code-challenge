@@ -1,28 +1,42 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import Record from './Record'
 import { TRANSACTION, TRANSACTION_STATUS } from '../../../constants'
 
 import * as styles from './styles'
 
-interface BalanceType {
-    value?: number
-    abbreviation?: string
-    symbol?: string
+interface HistoryProps {
+    history?: IRecord[]
 }
 
-const Balance:React.FunctionComponent<BalanceType> = ({
-    value,
-    abbreviation = "A",
-    symbol = "$"
-}) => {
-    return (
-        <div className={styles.historyContainer}>
-            I am history
-            <Record value={1.1} status={TRANSACTION_STATUS.SUCCESS} type={TRANSACTION.TOPUP} sender="testsender" recipient='testrecipient' timestamp={Date.now()} balance={20} />
-        </div>
-    )
-}
+const History:React.FunctionComponent<HistoryProps> = ({
+    history = []
+}) => (
+    <div className={styles.historyContainer}>
+        {
+            history.map(
+                ({balance, recipient, sender, status, timestamp, type, value}:IRecord) =>
+                    <Record
+                        value={value}
+                        status={status}
+                        type={type}
+                        sender={sender}
+                        recipient={recipient}
+                        timestamp={timestamp}
+                        balance={balance}
+                        key={timestamp}
+                    />)
+        }
+    </div>
+)
 
-export default Balance
-// TODO: Connect to redux
+
+const mapStateToProps = (state:IState) => ({
+    history: state.history
+})
+
+export default connect(
+    mapStateToProps,
+    null
+)(History)
